@@ -1,0 +1,12 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:PlacaIoT.elf,org.eclipse.launchbar.core.descriptorType.default\:B-475-UART.elf
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:B-475-UART.elf/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:B-475-UART.elf/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:LPS22HB.elf/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:LPS22HB.elf/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:PlacaIoT.elf/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:PlacaIoT.elf/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:WS2812B_SPI.elf/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:WS2812B_SPI.elf/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
