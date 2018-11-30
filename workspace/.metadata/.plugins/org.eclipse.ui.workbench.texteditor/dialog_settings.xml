@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="sprintf" key="selection"/>
+		<item value="rxChar" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="rxChar[0]"/>
 			<item value="sprintf"/>
 			<item value="printf"/>
 			<item value="color"/>
@@ -16,6 +17,7 @@
 			<item value="VL53L0X_SetDeviceMode("/>
 		</list>
 		<list key="replacehistory">
+			<item value="rxChar"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

@@ -1,0 +1,36 @@
+/*
+ * uartDecoder.c
+ *
+ *  Created on: 27 nov. 2018
+ *      Author: dcamacho
+ */
+
+
+#include <uartDecoder.h>
+
+
+extern UART_HandleTypeDef huart1;
+
+#define PRINT_GREEN(X,Y) { \
+		  HAL_UART_Transmit(&huart1, (uint8_t *) "\033[32;1m", 7 ,500); \
+		  HAL_UART_Transmit(&huart1, X, Y, 500); \
+		  HAL_UART_Transmit(&huart1, (uint8_t*) "\033[0m", 4 ,500); \
+		  }
+
+#define PRINT_RED(X,Y) { \
+		  HAL_UART_Transmit(&huart1, (uint8_t *) "\033[31;1m", 7 ,500); \
+		  HAL_UART_Transmit(&huart1, X, Y, 500); \
+		  HAL_UART_Transmit(&huart1, (uint8_t*) "\033[0m", 4 ,500); \
+		  }
+
+void decoderMsg(uint8_t *string)
+{
+	uint8_t *pos;
+
+	pos = (uint8_t *)strstr((const char *)"Menu1", (char *) string);
+	if(pos > 0)
+	{
+		HAL_UART_Transmit(&huart1, (uint8_t *) "Menu 1 Activado\n",16,500);
+		PRINT_RED("Opcion 1", 8);
+	}
+}

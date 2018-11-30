@@ -44,6 +44,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include <string.h>
+#include <uartDecoder.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -53,7 +55,19 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#ifndef COLOR_PRINT
+#define PRINT_GREEN(X,Y) { \
+		HAL_UART_Transmit(&huart1, (uint8_t *) "\033[32;1m", 7 ,500); \
+		HAL_UART_Transmit(&huart1, X, Y, 500); \
+		HAL_UART_Transmit(&huart1, (uint8_t*) "\033[0m", 4 ,500); \
+}
 
+#define PRINT_RED(X,Y) { \
+		HAL_UART_Transmit(&huart1, (uint8_t *) "\033[31;1m", 7 ,500); \
+		HAL_UART_Transmit(&huart1, X, Y, 500); \
+		HAL_UART_Transmit(&huart1, (uint8_t*) "\033[0m", 4 ,500); \
+}
+#endif
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -67,6 +81,8 @@ CRC_HandleTypeDef hcrc;
 DFSDM_Channel_HandleTypeDef hdfsdm1_channel1;
 
 I2C_HandleTypeDef hi2c2;
+
+IWDG_HandleTypeDef hiwdg;
 
 QSPI_HandleTypeDef hqspi;
 
@@ -99,6 +115,7 @@ static void MX_USART1_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_USB_OTG_FS_PCD_Init(void);
 static void MX_CRC_Init(void);
+static void MX_IWDG_Init(void);
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
 
@@ -106,6 +123,19 @@ static void MX_CRC_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void checkReset(void)
+{
+	if(__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST) == 1)	PRINT_RED( (uint8_t *)"Reset by WDT\n", 13)
+
+	if(__HAL_RCC_GET_FLAG(RCC_FLAG_PINRST) == 1)	PRINT_RED( (uint8_t *)"Reset by NRST\n", 14)
+
+	if(__HAL_RCC_GET_FLAG(RCC_FLAG_SFTRST) == 1)	PRINT_RED( (uint8_t *)"Reset by SFTRST\n", 16)
+
+	if(__HAL_RCC_GET_FLAG(RCC_FLAG_BORRST) == 1)	PRINT_RED( (uint8_t *)"Reset by BOR\n", 13)
+
+	__HAL_RCC_CLEAR_RESET_FLAGS();
+}
+
 void  HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle)
 {
   if(UartHandle->Instance == USART1)
@@ -113,6 +143,7 @@ void  HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle)
     if((rxChar == ('\r')) || (rxChar == ('\n')))
     {
     	rxBuffer[rxIndex] = rxChar;
+    	HAL_UART_Transmit(&huart1, &rxChar, 1, 500);
     	for (int a = 0; a < rxIndex +1; ++a) {
 			handlerU1[a] = rxBuffer[a];
 		}
@@ -124,15 +155,17 @@ void  HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle)
 	else
 
     {
-		//uint8_t buffer1[20];
+		if((rxChar > 0x60) && (rxChar < 0x7A))rxChar -= 0x20;
 		rxBuffer[rxIndex] = rxChar;
     	//HAL_UART_Transmit(&huart1,(uint8_t *) WHITE_TEXT1,6,500);
-    	HAL_UART_Transmit(&huart1,&rxBuffer[rxIndex],1,150);
+    	HAL_UART_Transmit(&huart1,&rxBuffer[rxIndex],1,200);
     	//HAL_UART_Transmit(&huart1,(uint8_t *) WHITE_TEXT2,6,500);
     	HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
     	++rxIndex;
     }
     HAL_UART_Receive_IT(&huart1,&rxChar,1);
+    __NOP();
+    __NOP();
   }
 }
 /* USER CODE END 0 */
@@ -173,10 +206,13 @@ int main(void)
   MX_USART3_UART_Init();
   MX_USB_OTG_FS_PCD_Init();
   MX_CRC_Init();
+  MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
   HAL_UART_Receive_IT(&huart1,&rxChar,1);
   printf("Inicio\n");
-  HAL_UART_Transmit(&huart1,(uint8_t *)"\n\nInicio de placa ST L475-IOT\n\n",31,500);
+  HAL_UART_Transmit(&huart1,(uint8_t *)"\n\nInicio de placa \033[1m\033[33m B-L475-IOT\033[0m \n\n",45,500);
+  __HAL_IWDG_START(&hiwdg);
+  checkReset();
 
   /* USER CODE END 2 */
 
@@ -187,14 +223,11 @@ int main(void)
 	  if(handlerU1Flag == 1)
 	  {
 		  handlerU1Flag = 0;
-		  HAL_UART_Transmit(&huart1, (uint8_t *) GREEN_TEXT1, sizeof(GREEN_TEXT1),500);
-		  HAL_UART_Transmit(&huart1, (uint8_t *) handlerU1, sizeof(handlerU1), 500);
-		  HAL_UART_Transmit(&huart1, (uint8_t*) GREEN_TEXT2, sizeof(GREEN_TEXT2),500);
-		  HAL_UART_Transmit(&huart1,(uint8_t *) WHITE_TEXT1,6,500);
+		  decoderMsg(handlerU1);
 		  for (int a = 0; a < 100; ++a) handlerU1[a] = 0;
 	  }
-
-	  HAL_Delay(500);
+	  HAL_IWDG_Refresh(&hiwdg);
+	  HAL_Delay(50);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -219,8 +252,10 @@ void SystemClock_Config(void)
   __HAL_RCC_LSEDRIVE_CONFIG(RCC_LSEDRIVE_LOW);
   /**Initializes the CPU, AHB and APB busses clocks 
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSE|RCC_OSCILLATORTYPE_MSI;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_LSE
+                              |RCC_OSCILLATORTYPE_MSI;
   RCC_OscInitStruct.LSEState = RCC_LSE_ON;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.MSIState = RCC_MSI_ON;
   RCC_OscInitStruct.MSICalibrationValue = 0;
   RCC_OscInitStruct.MSIClockRange = RCC_MSIRANGE_6;
@@ -390,6 +425,35 @@ static void MX_I2C2_Init(void)
   /* USER CODE BEGIN I2C2_Init 2 */
 
   /* USER CODE END I2C2_Init 2 */
+
+}
+
+/**
+  * @brief IWDG Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_IWDG_Init(void)
+{
+
+  /* USER CODE BEGIN IWDG_Init 0 */
+
+  /* USER CODE END IWDG_Init 0 */
+
+  /* USER CODE BEGIN IWDG_Init 1 */
+
+  /* USER CODE END IWDG_Init 1 */
+  hiwdg.Instance = IWDG;
+  hiwdg.Init.Prescaler = IWDG_PRESCALER_256;
+  hiwdg.Init.Window = 1000;
+  hiwdg.Init.Reload = 1000;
+  if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN IWDG_Init 2 */
+
+  /* USER CODE END IWDG_Init 2 */
 
 }
 

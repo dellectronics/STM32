@@ -1,0 +1,53 @@
+/*
+ * uartDecoder.c
+ *
+ *  Created on: 27 nov. 2018
+ *      Author: dcamacho
+ */
+
+
+#include <uartDecoder.h>
+
+
+extern UART_HandleTypeDef huart1;
+
+#ifndef COLOR_PRINT
+#define PRINT_GREEN(X,Y) { \
+		HAL_UART_Transmit(&huart1, (uint8_t *) "\033[32;1m", 7 ,500); \
+		HAL_UART_Transmit(&huart1, X, Y, 500); \
+		HAL_UART_Transmit(&huart1, (uint8_t*) "\033[0m", 4 ,500); \
+}
+
+#define PRINT_RED(X,Y) { \
+		HAL_UART_Transmit(&huart1, (uint8_t *) "\033[31;1m", 7 ,500); \
+		HAL_UART_Transmit(&huart1, X, Y, 500); \
+		HAL_UART_Transmit(&huart1, (uint8_t*) "\033[0m", 4 ,500); \
+}
+#endif
+
+void decoderMsg(uint8_t *string)
+{
+	char *pos;
+
+	pos = strstr((char *) string, (const char *)"Menu1");
+	if(pos != NULL)
+	{
+		HAL_UART_Transmit(&huart1, (uint8_t *) "Menu 1 Activado\n",16,500);
+		PRINT_GREEN((uint8_t *) "Opcion 1\n", 8);
+	} // if(Menu1)
+
+	pos = strstr((char *) string, (const char *)"Menu2");
+	if(pos != 0)
+	{
+		uint8_t array[50], index = 0, num1;
+		(*pos) += 6;
+
+		do {
+			array[index] = (uint8_t)*pos;
+			++(*pos);
+		} while ((index < 50) || ((array[index] > '0') && (array[index] < '9')));
+		num1 = atoi(array);
+		sprintf("El número es %i",num1, array);
+		PRINT_RED((uint8_t *)array, strlen(array));
+	} // if(Menu2)
+}
