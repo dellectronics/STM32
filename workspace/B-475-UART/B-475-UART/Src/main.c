@@ -46,6 +46,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <uartDecoder.h>
+#include "stm32l475e_iot01.h"
+#include "stm32l475e_iot01_tsensor.h"
+#include "stm32l475e_iot01_psensor.h"
+#include "wifi.h"
+
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -67,6 +73,13 @@
 		HAL_UART_Transmit(&huart1, X, Y, 500); \
 		HAL_UART_Transmit(&huart1, (uint8_t*) "\033[0m", 4 ,500); \
 }
+
+#define PRINT_BLUE(X,Y) { \
+		HAL_UART_Transmit(&huart1, (uint8_t *) "\033[34;1m", 7 ,500); \
+		HAL_UART_Transmit(&huart1, X, Y, 500); \
+		HAL_UART_Transmit(&huart1, (uint8_t*) "\033[0m", 4 ,500); \
+}
+
 #endif
 /* USER CODE END PD */
 
@@ -95,8 +108,12 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-uint8_t rxBuffer[100], handlerU1[100], rxIndex = 0, rxChar;
+
+
+uint8_t rxBuffer[100], handlerU1[100], rxIndex = 0, rxChar, rxChar3;
 uint32_t handlerU1Flag = 0;
+
+
 #define WHITE_TEXT1 "\033[36;1m"
 #define WHITE_TEXT2 "\033[0m"
 #define GREEN_TEXT1 "\033[32;1m"
@@ -164,10 +181,14 @@ void  HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle)
     	++rxIndex;
     }
     HAL_UART_Receive_IT(&huart1,&rxChar,1);
-    __NOP();
-    __NOP();
+
   }
+
+
 }
+
+
+
 /* USER CODE END 0 */
 
 /**
@@ -209,10 +230,15 @@ int main(void)
   MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
   HAL_UART_Receive_IT(&huart1,&rxChar,1);
+  HAL_UART_Receive_IT(&huart3,&rxChar3,1);
   printf("Inicio\n");
   HAL_UART_Transmit(&huart1,(uint8_t *)"\n\nInicio de placa \033[1m\033[33m B-L475-IOT\033[0m \n\n",45,500);
   __HAL_IWDG_START(&hiwdg);
   checkReset();
+  PRINT_BLUE((uint8_t *) "#",1);
+  BSP_TSENSOR_Init();
+  BSP_PSENSOR_Init();
+
 
   /* USER CODE END 2 */
 
@@ -227,6 +253,8 @@ int main(void)
 		  for (int a = 0; a < 100; ++a) handlerU1[a] = 0;
 	  }
 	  HAL_IWDG_Refresh(&hiwdg);
+
+
 	  HAL_Delay(50);
     /* USER CODE END WHILE */
 

@@ -11,9 +11,14 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "stm32l475e_iot01.h"
+#include "stm32l475e_iot01_tsensor.h"
+#include "stm32l475e_iot01_psensor.h"
+#include <math.h>
 
 
 extern UART_HandleTypeDef huart1;
+
 
 #ifndef COLOR_PRINT
 #define PRINT_GREEN(X,Y) { \
@@ -44,6 +49,7 @@ void decoderMsg(uint8_t *string)
 	{
 		HAL_UART_Transmit(&huart1, (uint8_t *) "Menu 1 Activado\n",16,500);
 		PRINT_GREEN((uint8_t *) "Opcion 1\n", 9);
+
 		check = 1;
 	} // if(Menu1)
 
@@ -81,12 +87,42 @@ void decoderMsg(uint8_t *string)
 	}
 
 	pos = strstr((char *) string, (const char *) "RESET");
-		if(pos != NULL)
-		{
-			HAL_UART_Transmit(&huart1, (uint8_t *)"Reset del sistema\n", 14,300);
-			HAL_Delay(1000);
-			HAL_NVIC_SystemReset();
-		}
+	if(pos != NULL)
+	{
+		HAL_UART_Transmit(&huart1, (uint8_t *)"Reset del sistema\n", 18,300);
+		HAL_Delay(1000);
+		HAL_NVIC_SystemReset();
+	}
+
+	pos = strstr((char *) string, (const char *) "TEMP");
+	if(pos != NULL)
+	{
+		uint8_t tempBuffer[50];
+		float temperature;
+
+		temperature = BSP_TSENSOR_ReadTemp();
+		int tmpInt1 = temperature;
+		float tmpFrac = temperature - tmpInt1;
+		int tmpInt2 = trunc(tmpFrac * 100);
+		snprintf((char *) tempBuffer,50,"TEMPERATURE = %d.%02d\n", tmpInt1, tmpInt2);
+		HAL_UART_Transmit(&huart1, (uint8_t *) tempBuffer, 20, 100);
+		HAL_Delay(1000);
+
+		check = 1;
+	}
+
+	pos = strstr((char *) string, (const char *) "PRESSURE");
+	if(pos != NULL)
+	{
+		uint8_t tempBuffer[50], pressure;
+
+		pressure = BSP_PSENSOR_ReadPressure();
+		snprintf((char *) tempBuffer,50,"PRESSURE = %d\n", pressure);
+		HAL_UART_Transmit(&huart1, (uint8_t *) tempBuffer, (uint8_t) strlen(tempBuffer), 100);
+
+		check = 1;
+	}
+
 
 	if(check == 0) PRINT_RED((uint8_t *)"Unrecognized command\n",21);
 
