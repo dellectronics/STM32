@@ -1,0 +1,23 @@
+/*
+ * L6470_Driver.h
+ *
+ *  Created on: 24 mar. 2019
+ *      Author: dellectronics
+ */
+
+#ifndef L6470_DRIVER_H_
+#define L6470_DRIVER_H_
+
+
+#include "stm32f4xx_hal.h"
+
+
+#define SPI_PORT &hspi1
+#define CS_PORT	SPI1_CS_GPIO_Port
+#define CS_PIN SPI1_CS_Pin
+
+#define L6470_OK = 1;
+#define L6470_ERROR = 0;
+
+
+#endif /* L6470_DRIVER_H_ */

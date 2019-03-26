@@ -1,0 +1,5 @@
+L6470_Driver.c:12:6:L6470_nCS_High	8	static
+L6470_Driver.c:17:6:L6470_nCS_Low	8	static
+L6470_Driver.c:22:9:L6470_SetParam	64	dynamic
+L6470_Driver.c:80:6:L6470_GetParam	24	static
+L6470_Driver.c:86:6:L6470_Run	56	static

@@ -1,0 +1,41 @@
+/*
+ * L6470_Driver.c
+ *
+ *  Created on: 24 mar. 2019
+ *      Author: dellectronics
+ */
+
+enum resgister{
+	ABS_POS = 1,		//
+	EL_POS,				//
+	MARK, 				//
+	SPEED,				//
+	ACC,				//
+	DEC, 				//	
+	MAX_SPEED,			//
+	MIN_SPEED			//
+	KVAL_HOLD,			//
+	KVAL_RUN,			//
+	KVAL_ACC,			//
+	KVAL_DEC,			//
+	INT_SPEED,			//
+	ST_SLP,				//
+	FN_SLP_ACC,			//
+	FN_SLP_DEC,			//
+	K_TERM,				//
+	ADC_OUT,			//
+	OCD_TH,				//
+	STALL_TH,			//
+	FS_SPD,				//
+	STEP_MODE,			//
+	ALARM_EN,			//
+	CONFIG,				//
+	STATUS				//
+};
+
+
+
+void L6470_SetParam(uint8_t param, uint8_t data, uint8_t length, uint8_t driverPos)
+{
+
+}

@@ -1,0 +1,100 @@
+/*
+ * L6470_Driver.c
+ *
+ *  Created on: 24 mar. 2019
+ *      Author: dellectronics
+ */
+
+#include <L6470_Driver.h>
+
+extern SPI_HandleTypeDef hspi1;
+
+#define SPI_PORT &hspi1
+
+enum registers
+{
+	ABS_POS = 1,		//	R/WS - Current Position
+	EL_POS,				//	R/WS - Electrical Position
+	MARK, 				//	R/WR - Mark Position
+	SPEED,				//	R - Current Speed
+	ACC,				//	R/WS - Acceleration
+	DEC, 				//	R/WS - Deceleration
+	MAX_SPEED,			//	R/WR - Maximum speed
+	MIN_SPEED,			//	R/WS - Minimum speed
+	KVAL_HOLD,			//	R/WR - Holding Kval
+	KVAL_RUN,			//  R/WR - Constant speed Kval
+	KVAL_ACC,			//	R/WR - Acceleration starting Kval
+	KVAL_DEC,			//	R/WR - Deceleration starting Kval
+	INT_SPEED,			//	R/WH - Intersect speed
+	ST_SLP,				//	R/WH - Start slope
+	FN_SLP_ACC,			//	R/WH - Acceleration final slope
+	FN_SLP_DEC,			//	R/WH - Deceleration final slope
+	K_TERM,				//	R/WR - Thermal compensation factor
+	ADC_OUT,			//	R - ADC out
+	OCD_TH,				//	R/WR - OCD threshold
+	STALL_TH,			//	R/WR - Stall threshold
+	FS_SPD,				//	R/WR - Full-step speed
+	STEP_MODE,			//	R/WH - Step mode
+	ALARM_EN,			//	R/WS - Alarm enable
+	CONFIG,				//	R/WH - IC Configurator
+	STATUS				//	R - Status
+};
+
+void L6470_nCS_High(void)
+{
+	HAL_GPIO_WritePin(CS_PORT, CS_PIN, GPIO_PIN_SET);
+}
+
+void L6470_nCS_Low(void)
+{
+	HAL_GPIO_WritePin(CS_PORT, CS_PIN, GPIO_PIN_RESET);
+}
+
+uint8_t L6470_SetParam(uint8_t param, uint8_t *pData, uint8_t length, uint8_t driverPos)
+{
+	uint8_t txData[4 * numberOfDrivers];
+	uint8_t b = 0;
+
+	for (int var = 0; var < sizeof(txData); ++var)
+	{
+		txData[var] = 0;
+
+	}
+
+	if (length > 3)
+	{
+		return L6470_ERROR;
+	}
+	else
+	{
+		if (driverPos == 2)
+		{
+			for (int i = 0; i < length; i += 2)
+			{
+				txData[i] = *pData;
+				++pData;
+			}
+		}
+
+		else if (driverPos == 1)
+		{
+			for (int i = 1; i < length; i += 2)
+			{
+				txData[i] = *pData;
+				++pData;
+			}
+		}
+
+		L6470_nCS_Low();
+		HAL_SPI_Transmit(SPI_PORT, &txData, length * 2, 100);
+		L6470_nCS_High();
+
+		return L6470_OK;
+	}
+
+}	// L6470_SetParam
+
+void L6470_GetParam(uint8_t param, uint8_t *pData, uint8_t length, uint8_t driverPos)
+{
+	uint8_t rxData[10];
+}

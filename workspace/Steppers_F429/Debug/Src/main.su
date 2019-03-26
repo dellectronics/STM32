@@ -1,0 +1,9 @@
+main.c:72:10:L6470_nFLAG	16	static
+main.c:79:10:L6470_nBUSY	16	static
+main.c:91:5:main	40	static
+main.c:170:6:SystemClock_Config	88	static
+main.c:215:13:MX_SPI1_Init	8	static
+main.c:253:13:MX_USART3_UART_Init	8	static
+main.c:286:13:MX_USB_OTG_FS_PCD_Init	8	static
+main.c:321:13:MX_GPIO_Init	56	static
+main.c:455:6:Error_Handler	4	static
