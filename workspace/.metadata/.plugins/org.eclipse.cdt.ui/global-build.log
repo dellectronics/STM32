@@ -1,32 +1,350 @@
-14:37:39 **** Incremental Build of configuration Debug for project B-475-UART ****
+22:02:43 **** Incremental Build of configuration Debug for project Steppers_F429 ****
 Info: Internal Builder is used for build
-arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -D__weak=__attribute__((weak)) -D__packed=__attribute__((__packed__)) -DUSE_HAL_DRIVER -DSTM32L475xx -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o Src\main.o ..\Src\main.c 
-arm-atollic-eabi-gcc -o B-475-UART.elf Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_cortex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_crc.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_crc_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dfsdm.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash_ramfunc.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_gpio.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_iwdg.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pcd.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pcd_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_qspi.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_spi.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_spi_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_ll_usb.o Src\main.o Src\stm32l4xx_hal_msp.o Src\stm32l4xx_it.o Src\system_stm32l4xx.o Src\uartDecoder.o startup\startup_stm32l475xx.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../STM32L475VG_FLASH.ld -specs=nosys.specs -static -Wl,-Map=B-475-UART.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
-C:\Programas\TrueSTUDIO for STM32 9.0.0\ide\jre\bin\java -jar C:\Programas\TrueSTUDIO for STM32 9.0.0\Tools\arm-atollic-reports.jar sizeinfo list B-475-UART.elf 
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -D__weak=__attribute__((weak)) -D__packed=__attribute__((__packed__)) -DUSE_HAL_DRIVER -DSTM32F429xx -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o Src\L6470_Driver.o ..\Src\L6470_Driver.c 
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -D__weak=__attribute__((weak)) -D__packed=__attribute__((__packed__)) -DUSE_HAL_DRIVER -DSTM32F429xx -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o Src\main.o ..\Src\main.c 
+..\Src\L6470_Driver.c: In function 'L6470_GetParam':
+..\Src\L6470_Driver.c:82:10: warning: unused variable 'rxData' [-Wunused-variable]
+  uint8_t rxData[4];
+          ^~~~~~
+..\Src\main.c: In function 'main':
+..\Src\main.c:103:10: warning: unused variable 'msg5' [-Wunused-variable]
+  uint8_t msg5[2] =
+          ^~~~
+..\Src\main.c:101:10: warning: unused variable 'msg4' [-Wunused-variable]
+  uint8_t msg4[2] =
+          ^~~~
+..\Src\main.c:99:10: warning: unused variable 'msg3' [-Wunused-variable]
+  uint8_t msg3[2] =
+          ^~~~
+..\Src\main.c:97:10: warning: unused variable 'msg2' [-Wunused-variable]
+  uint8_t msg2[2] =
+          ^~~~
+..\Src\main.c:95:10: warning: unused variable 'msg1' [-Wunused-variable]
+  uint8_t msg1[2] =
+          ^~~~
+..\Src\main.c:94:18: warning: variable 'nBUSY' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+                  ^~~~~
+..\Src\main.c:94:11: warning: variable 'nFLAG' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+           ^~~~~
+arm-atollic-eabi-gcc -o Steppers_F429.elf Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.o Src\L6470_Driver.o Src\main.o Src\stm32f4xx_hal_msp.o Src\stm32f4xx_it.o Src\syscalls.o Src\system_stm32f4xx.o startup\startup_stm32f429xx.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../STM32F429ZI_FLASH.ld -specs=nosys.specs -static -Wl,-Map=Steppers_F429.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+D:\STM32\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar D:\STM32\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list Steppers_F429.elf 
 Generate build reports...
 Print size information
    text	   data	    bss	    dec	    hex	filename
-  18984	    476	   3460	  22920	   5988	B-475-UART.elf
+  12364	     20	   2752	  15136	   3b20	Steppers_F429.elf
 Print size information done
 Generate listing file
-Output sent to: B-475-UART.list
+Output sent to: Steppers_F429.list
 Generate listing file done
 Generate build reports done
-arm-atollic-eabi-objcopy.exe -O ihex B-475-UART.elf B-475-UART.hex 
-Info: Nothing to build for B-475-UART
-18:09:09 **** Incremental Build of configuration Debug for project B-475-UART ****
+arm-atollic-eabi-objcopy.exe -O ihex Steppers_F429.elf Steppers_F429.hex 
+Info: Parallel threads used: 2
+22:02:48 **** Incremental Build of configuration Debug for project Steppers_F429 ****
 Info: Internal Builder is used for build
-arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -D__weak=__attribute__((weak)) -D__packed=__attribute__((__packed__)) -DUSE_HAL_DRIVER -DSTM32L475xx -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o Src\uartDecoder.o ..\Src\uartDecoder.c 
-arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -D__weak=__attribute__((weak)) -D__packed=__attribute__((__packed__)) -DUSE_HAL_DRIVER -DSTM32L475xx -I../Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o Src\main.o ..\Src\main.c 
-arm-atollic-eabi-gcc -o B-475-UART.elf Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_cortex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_crc.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_crc_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dfsdm.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash_ramfunc.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_gpio.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_iwdg.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pcd.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pcd_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_qspi.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_spi.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_spi_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart_ex.o Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_ll_usb.o Src\main.o Src\stm32l4xx_hal_msp.o Src\stm32l4xx_it.o Src\system_stm32l4xx.o Src\uartDecoder.o startup\startup_stm32l475xx.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../STM32L475VG_FLASH.ld -specs=nosys.specs -static -Wl,-Map=B-475-UART.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
-C:\Programas\TrueSTUDIO for STM32 9.0.0\ide\jre\bin\java -jar C:\Programas\TrueSTUDIO for STM32 9.0.0\Tools\arm-atollic-reports.jar sizeinfo list B-475-UART.elf 
+Info: Parallel threads used: 0
+22:07:22 **** Incremental Build of configuration Debug for project Steppers_F429 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -D__weak=__attribute__((weak)) -D__packed=__attribute__((__packed__)) -DUSE_HAL_DRIVER -DSTM32F429xx -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o Src\main.o ..\Src\main.c 
+..\Src\main.c: In function 'main':
+..\Src\main.c:103:10: warning: unused variable 'msg5' [-Wunused-variable]
+  uint8_t msg5[2] =
+          ^~~~
+..\Src\main.c:101:10: warning: unused variable 'msg4' [-Wunused-variable]
+  uint8_t msg4[2] =
+          ^~~~
+..\Src\main.c:99:10: warning: unused variable 'msg3' [-Wunused-variable]
+  uint8_t msg3[2] =
+          ^~~~
+..\Src\main.c:97:10: warning: unused variable 'msg2' [-Wunused-variable]
+  uint8_t msg2[2] =
+          ^~~~
+..\Src\main.c:95:10: warning: unused variable 'msg1' [-Wunused-variable]
+  uint8_t msg1[2] =
+          ^~~~
+..\Src\main.c:94:18: warning: variable 'nBUSY' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+                  ^~~~~
+..\Src\main.c:94:11: warning: variable 'nFLAG' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+           ^~~~~
+arm-atollic-eabi-gcc -o Steppers_F429.elf Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.o Src\L6470_Driver.o Src\main.o Src\stm32f4xx_hal_msp.o Src\stm32f4xx_it.o Src\syscalls.o Src\system_stm32f4xx.o startup\startup_stm32f429xx.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../STM32F429ZI_FLASH.ld -specs=nosys.specs -static -Wl,-Map=Steppers_F429.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+D:\STM32\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar D:\STM32\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list Steppers_F429.elf 
 Generate build reports...
 Print size information
    text	   data	    bss	    dec	    hex	filename
-  19100	    476	   3460	  23036	   59fc	B-475-UART.elf
+  12380	     20	   2752	  15152	   3b30	Steppers_F429.elf
 Print size information done
 Generate listing file
-Output sent to: B-475-UART.list
+Output sent to: Steppers_F429.list
 Generate listing file done
 Generate build reports done
-arm-atollic-eabi-objcopy.exe -O ihex B-475-UART.elf B-475-UART.hex 
+arm-atollic-eabi-objcopy.exe -O ihex Steppers_F429.elf Steppers_F429.hex 
+Info: Parallel threads used: 1
+22:08:27 **** Incremental Build of configuration Debug for project Steppers_F429 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -D__weak=__attribute__((weak)) -D__packed=__attribute__((__packed__)) -DUSE_HAL_DRIVER -DSTM32F429xx -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o Src\main.o ..\Src\main.c 
+..\Src\main.c: In function 'main':
+..\Src\main.c:103:10: warning: unused variable 'msg5' [-Wunused-variable]
+  uint8_t msg5[2] =
+          ^~~~
+..\Src\main.c:101:10: warning: unused variable 'msg4' [-Wunused-variable]
+  uint8_t msg4[2] =
+          ^~~~
+..\Src\main.c:99:10: warning: unused variable 'msg3' [-Wunused-variable]
+  uint8_t msg3[2] =
+          ^~~~
+..\Src\main.c:97:10: warning: unused variable 'msg2' [-Wunused-variable]
+  uint8_t msg2[2] =
+          ^~~~
+..\Src\main.c:95:10: warning: unused variable 'msg1' [-Wunused-variable]
+  uint8_t msg1[2] =
+          ^~~~
+..\Src\main.c:94:18: warning: variable 'nBUSY' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+                  ^~~~~
+..\Src\main.c:94:11: warning: variable 'nFLAG' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+           ^~~~~
+arm-atollic-eabi-gcc -o Steppers_F429.elf Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.o Src\L6470_Driver.o Src\main.o Src\stm32f4xx_hal_msp.o Src\stm32f4xx_it.o Src\syscalls.o Src\system_stm32f4xx.o startup\startup_stm32f429xx.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../STM32F429ZI_FLASH.ld -specs=nosys.specs -static -Wl,-Map=Steppers_F429.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+D:\STM32\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar D:\STM32\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list Steppers_F429.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+  12380	     20	   2752	  15152	   3b30	Steppers_F429.elf
+Print size information done
+Generate listing file
+Output sent to: Steppers_F429.list
+Generate listing file done
+Generate build reports done
+arm-atollic-eabi-objcopy.exe -O ihex Steppers_F429.elf Steppers_F429.hex 
+Info: Parallel threads used: 1
+22:09:33 **** Incremental Build of configuration Debug for project Steppers_F429 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -D__weak=__attribute__((weak)) -D__packed=__attribute__((__packed__)) -DUSE_HAL_DRIVER -DSTM32F429xx -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o Src\main.o ..\Src\main.c 
+..\Src\main.c: In function 'main':
+..\Src\main.c:103:10: warning: unused variable 'msg5' [-Wunused-variable]
+  uint8_t msg5[2] =
+          ^~~~
+..\Src\main.c:101:10: warning: unused variable 'msg4' [-Wunused-variable]
+  uint8_t msg4[2] =
+          ^~~~
+..\Src\main.c:99:10: warning: unused variable 'msg3' [-Wunused-variable]
+  uint8_t msg3[2] =
+          ^~~~
+..\Src\main.c:97:10: warning: unused variable 'msg2' [-Wunused-variable]
+  uint8_t msg2[2] =
+          ^~~~
+..\Src\main.c:95:10: warning: unused variable 'msg1' [-Wunused-variable]
+  uint8_t msg1[2] =
+          ^~~~
+..\Src\main.c:94:18: warning: variable 'nBUSY' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+                  ^~~~~
+..\Src\main.c:94:11: warning: variable 'nFLAG' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+           ^~~~~
+arm-atollic-eabi-gcc -o Steppers_F429.elf Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.o Src\L6470_Driver.o Src\main.o Src\stm32f4xx_hal_msp.o Src\stm32f4xx_it.o Src\syscalls.o Src\system_stm32f4xx.o startup\startup_stm32f429xx.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../STM32F429ZI_FLASH.ld -specs=nosys.specs -static -Wl,-Map=Steppers_F429.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+D:\STM32\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar D:\STM32\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list Steppers_F429.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+  12380	     20	   2752	  15152	   3b30	Steppers_F429.elf
+Print size information done
+Generate listing file
+Output sent to: Steppers_F429.list
+Generate listing file done
+Generate build reports done
+arm-atollic-eabi-objcopy.exe -O ihex Steppers_F429.elf Steppers_F429.hex 
+Info: Parallel threads used: 1
+22:10:09 **** Incremental Build of configuration Debug for project Steppers_F429 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -D__weak=__attribute__((weak)) -D__packed=__attribute__((__packed__)) -DUSE_HAL_DRIVER -DSTM32F429xx -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o Src\main.o ..\Src\main.c 
+..\Src\main.c: In function 'main':
+..\Src\main.c:103:10: warning: unused variable 'msg5' [-Wunused-variable]
+  uint8_t msg5[2] =
+          ^~~~
+..\Src\main.c:101:10: warning: unused variable 'msg4' [-Wunused-variable]
+  uint8_t msg4[2] =
+          ^~~~
+..\Src\main.c:99:10: warning: unused variable 'msg3' [-Wunused-variable]
+  uint8_t msg3[2] =
+          ^~~~
+..\Src\main.c:97:10: warning: unused variable 'msg2' [-Wunused-variable]
+  uint8_t msg2[2] =
+          ^~~~
+..\Src\main.c:95:10: warning: unused variable 'msg1' [-Wunused-variable]
+  uint8_t msg1[2] =
+          ^~~~
+..\Src\main.c:94:18: warning: variable 'nBUSY' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+                  ^~~~~
+..\Src\main.c:94:11: warning: variable 'nFLAG' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+           ^~~~~
+arm-atollic-eabi-gcc -o Steppers_F429.elf Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.o Src\L6470_Driver.o Src\main.o Src\stm32f4xx_hal_msp.o Src\stm32f4xx_it.o Src\syscalls.o Src\system_stm32f4xx.o startup\startup_stm32f429xx.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../STM32F429ZI_FLASH.ld -specs=nosys.specs -static -Wl,-Map=Steppers_F429.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+D:\STM32\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar D:\STM32\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list Steppers_F429.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+  12380	     20	   2752	  15152	   3b30	Steppers_F429.elf
+Print size information done
+Generate listing file
+Output sent to: Steppers_F429.list
+Generate listing file done
+Generate build reports done
+arm-atollic-eabi-objcopy.exe -O ihex Steppers_F429.elf Steppers_F429.hex 
+Info: Parallel threads used: 1
+22:10:44 **** Incremental Build of configuration Debug for project Steppers_F429 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -D__weak=__attribute__((weak)) -D__packed=__attribute__((__packed__)) -DUSE_HAL_DRIVER -DSTM32F429xx -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o Src\main.o ..\Src\main.c 
+D:\STM32\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar D:\STM32\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list Steppers_F429.elf 
+..\Src\main.c: In function 'main':
+..\Src\main.c:103:10: warning: unused variable 'msg5' [-Wunused-variable]
+  uint8_t msg5[2] =
+          ^~~~
+..\Src\main.c:101:10: warning: unused variable 'msg4' [-Wunused-variable]
+  uint8_t msg4[2] =
+          ^~~~
+..\Src\main.c:99:10: warning: unused variable 'msg3' [-Wunused-variable]
+  uint8_t msg3[2] =
+          ^~~~
+..\Src\main.c:97:10: warning: unused variable 'msg2' [-Wunused-variable]
+  uint8_t msg2[2] =
+          ^~~~
+..\Src\main.c:95:10: warning: unused variable 'msg1' [-Wunused-variable]
+  uint8_t msg1[2] =
+          ^~~~
+..\Src\main.c:94:18: warning: variable 'nBUSY' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+                  ^~~~~
+..\Src\main.c:94:11: warning: variable 'nFLAG' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+           ^~~~~
+Generate build reports...
+Print size information
+arm-atollic-eabi-gcc -o Steppers_F429.elf Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.o Src\L6470_Driver.o Src\main.o Src\stm32f4xx_hal_msp.o Src\stm32f4xx_it.o Src\syscalls.o Src\system_stm32f4xx.o startup\startup_stm32f429xx.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../STM32F429ZI_FLASH.ld -specs=nosys.specs -static -Wl,-Map=Steppers_F429.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+   text	   data	    bss	    dec	    hex	filename
+  12380	     20	   2752	  15152	   3b30	Steppers_F429.elf
+Print size information done
+Generate listing file
+Output sent to: Steppers_F429.list
+Generate listing file done
+Generate build reports done
+arm-atollic-eabi-objcopy.exe -O ihex Steppers_F429.elf Steppers_F429.hex 
+Info: Parallel threads used: 2
+22:17:38 **** Incremental Build of configuration Debug for project Steppers_F429 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -D__weak=__attribute__((weak)) -D__packed=__attribute__((__packed__)) -DUSE_HAL_DRIVER -DSTM32F429xx -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o Src\main.o ..\Src\main.c 
+..\Src\main.c: In function 'main':
+..\Src\main.c:103:10: warning: unused variable 'msg5' [-Wunused-variable]
+  uint8_t msg5[2] =
+          ^~~~
+..\Src\main.c:101:10: warning: unused variable 'msg4' [-Wunused-variable]
+  uint8_t msg4[2] =
+          ^~~~
+..\Src\main.c:99:10: warning: unused variable 'msg3' [-Wunused-variable]
+  uint8_t msg3[2] =
+          ^~~~
+..\Src\main.c:97:10: warning: unused variable 'msg2' [-Wunused-variable]
+  uint8_t msg2[2] =
+          ^~~~
+..\Src\main.c:95:10: warning: unused variable 'msg1' [-Wunused-variable]
+  uint8_t msg1[2] =
+          ^~~~
+..\Src\main.c:94:18: warning: variable 'nBUSY' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+                  ^~~~~
+..\Src\main.c:94:11: warning: variable 'nFLAG' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+           ^~~~~
+arm-atollic-eabi-gcc -o Steppers_F429.elf Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.o Src\L6470_Driver.o Src\main.o Src\stm32f4xx_hal_msp.o Src\stm32f4xx_it.o Src\syscalls.o Src\system_stm32f4xx.o startup\startup_stm32f429xx.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../STM32F429ZI_FLASH.ld -specs=nosys.specs -static -Wl,-Map=Steppers_F429.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+D:\STM32\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar D:\STM32\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list Steppers_F429.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+  12396	     20	   2752	  15168	   3b40	Steppers_F429.elf
+Print size information done
+Generate listing file
+Output sent to: Steppers_F429.list
+Generate listing file done
+Generate build reports done
+arm-atollic-eabi-objcopy.exe -O ihex Steppers_F429.elf Steppers_F429.hex 
+Info: Parallel threads used: 1
+22:18:12 **** Incremental Build of configuration Debug for project Steppers_F429 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -D__weak=__attribute__((weak)) -D__packed=__attribute__((__packed__)) -DUSE_HAL_DRIVER -DSTM32F429xx -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o Src\main.o ..\Src\main.c 
+..\Src\main.c: In function 'main':
+..\Src\main.c:103:10: warning: unused variable 'msg5' [-Wunused-variable]
+  uint8_t msg5[2] =
+          ^~~~
+..\Src\main.c:101:10: warning: unused variable 'msg4' [-Wunused-variable]
+  uint8_t msg4[2] =
+          ^~~~
+..\Src\main.c:99:10: warning: unused variable 'msg3' [-Wunused-variable]
+  uint8_t msg3[2] =
+          ^~~~
+..\Src\main.c:97:10: warning: unused variable 'msg2' [-Wunused-variable]
+  uint8_t msg2[2] =
+          ^~~~
+..\Src\main.c:95:10: warning: unused variable 'msg1' [-Wunused-variable]
+  uint8_t msg1[2] =
+          ^~~~
+..\Src\main.c:94:18: warning: variable 'nBUSY' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+                  ^~~~~
+..\Src\main.c:94:11: warning: variable 'nFLAG' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+           ^~~~~
+arm-atollic-eabi-gcc -o Steppers_F429.elf Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.o Src\L6470_Driver.o Src\main.o Src\stm32f4xx_hal_msp.o Src\stm32f4xx_it.o Src\syscalls.o Src\system_stm32f4xx.o startup\startup_stm32f429xx.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../STM32F429ZI_FLASH.ld -specs=nosys.specs -static -Wl,-Map=Steppers_F429.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+D:\STM32\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar D:\STM32\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list Steppers_F429.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+  12396	     20	   2752	  15168	   3b40	Steppers_F429.elf
+Print size information done
+Generate listing file
+Output sent to: Steppers_F429.list
+Generate listing file done
+Generate build reports done
+arm-atollic-eabi-objcopy.exe -O ihex Steppers_F429.elf Steppers_F429.hex 
+Info: Parallel threads used: 1
+22:19:37 **** Incremental Build of configuration Debug for project Steppers_F429 ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -D__weak=__attribute__((weak)) -D__packed=__attribute__((__packed__)) -DUSE_HAL_DRIVER -DSTM32F429xx -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o Src\main.o ..\Src\main.c 
+..\Src\main.c: In function 'main':
+..\Src\main.c:103:10: warning: unused variable 'msg5' [-Wunused-variable]
+  uint8_t msg5[2] =
+          ^~~~
+..\Src\main.c:101:10: warning: unused variable 'msg4' [-Wunused-variable]
+  uint8_t msg4[2] =
+          ^~~~
+..\Src\main.c:99:10: warning: unused variable 'msg3' [-Wunused-variable]
+  uint8_t msg3[2] =
+          ^~~~
+..\Src\main.c:97:10: warning: unused variable 'msg2' [-Wunused-variable]
+  uint8_t msg2[2] =
+          ^~~~
+..\Src\main.c:95:10: warning: unused variable 'msg1' [-Wunused-variable]
+  uint8_t msg1[2] =
+          ^~~~
+..\Src\main.c:94:18: warning: variable 'nBUSY' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+                  ^~~~~
+..\Src\main.c:94:11: warning: variable 'nFLAG' set but not used [-Wunused-but-set-variable]
+  uint16_t nFLAG, nBUSY;
+           ^~~~~
+arm-atollic-eabi-gcc -o Steppers_F429.elf Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.o Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.o Src\L6470_Driver.o Src\main.o Src\stm32f4xx_hal_msp.o Src\stm32f4xx_it.o Src\syscalls.o Src\system_stm32f4xx.o startup\startup_stm32f429xx.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../STM32F429ZI_FLASH.ld -specs=nosys.specs -static -Wl,-Map=Steppers_F429.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+D:\STM32\TrueSTUDIO for STM32 9.3.0\ide\jre\bin\java -jar D:\STM32\TrueSTUDIO for STM32 9.3.0\Tools\arm-atollic-reports.jar sizeinfo list Steppers_F429.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+  12396	     20	   2752	  15168	   3b40	Steppers_F429.elf
+Print size information done
+Generate listing file
+Output sent to: Steppers_F429.list
+Generate listing file done
+Generate build reports done
+arm-atollic-eabi-objcopy.exe -O ihex Steppers_F429.elf Steppers_F429.hex 
+Info: Parallel threads used: 1
