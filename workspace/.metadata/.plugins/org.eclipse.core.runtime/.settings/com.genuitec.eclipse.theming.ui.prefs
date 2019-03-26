@@ -1,12 +1,12 @@
 applyBackground=false
 approved.defs.file.last.changed.time=1552086199000
 codemix.dont.show.upsell.until=1555015690670
-configurationInstallLocation=/D\:/STM32/TrueSTUDIO for STM32 9.3.0/ide/
+configurationInstallLocation=/C\:/Programas/TrueSTUDIO for STM32 9.0.0/ide/
 eclipse.preferences.version=1
-iconcolormode=pastel
+iconcolormode=primary
 includeThemingInOomph=false
-last.download.attempt.time=1553545405363
-lastConfiguration=1553444346408
+last.download.attempt.time=1553606958458
+lastConfiguration=1553606946913
 newinstall=false
 showWelcomeDialog=false
 workbench.theme=Dark Gray

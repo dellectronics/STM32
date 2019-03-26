@@ -92,17 +92,12 @@ int main(void)
 {
 	/* USER CODE BEGIN 1 */
 	uint16_t nFLAG, nBUSY;
-	uint8_t msg1[2] =
-	{ 0x40, 0x40 };
-	uint8_t msg2[2] =
-	{ 0x00, 0x00 };
-	uint8_t msg3[2] =
-	{ 0x05, 0x50 };
-	uint8_t msg4[2] =
-	{ 0x00, 0x50 };
-	uint8_t msg5[2] =
-	{ 0x41, 0x41 };
-	uint8_t max_speed[3] = {0x01, 0xFF, 0xFF};
+	uint8_t msg1[2] = { 0x40, 0x40 };
+	uint8_t msg2[2] = { 0x00, 0x00 };
+	uint8_t msg3[2] = { 0x05, 0x50 };
+	uint8_t msg4[2] = { 0x00, 0x50 };
+	uint8_t msg5[2] = { 0x41, 0x41 };
+	uint8_t max_speed[3] = { 0x01, 0xFF, 0xFF };
 	uint8_t setMode = 0x02;
 
 	/* USER CODE END 1 */
@@ -138,7 +133,7 @@ int main(void)
 	L6470_SetParam(STEP_MODE, &setMode, 1, 2);
 	L6470_SetParam(STEP_MODE, (uint8_t*) 0x00, 1, 1);
 	L6470_SetParam(MAX_SPEED, &max_speed[0], 3, 1);
-	L6470_SetParam(MAX_SPEED, &max_speed[0] , 3, 2);
+	L6470_SetParam(MAX_SPEED, &max_speed[0], 3, 2);
 
 	/* USER CODE END 2 */
 
@@ -169,10 +164,8 @@ int main(void)
  */
 void SystemClock_Config(void)
 {
-	RCC_OscInitTypeDef RCC_OscInitStruct =
-	{ 0 };
-	RCC_ClkInitTypeDef RCC_ClkInitStruct =
-	{ 0 };
+	RCC_OscInitTypeDef RCC_OscInitStruct = { 0 };
+	RCC_ClkInitTypeDef RCC_ClkInitStruct = { 0 };
 
 	/** Configure the main internal regulator output voltage
 	 */
@@ -320,8 +313,7 @@ static void MX_USB_OTG_FS_PCD_Init(void)
  */
 static void MX_GPIO_Init(void)
 {
-	GPIO_InitTypeDef GPIO_InitStruct =
-	{ 0 };
+	GPIO_InitTypeDef GPIO_InitStruct = { 0 };
 
 	/* GPIO Ports Clock Enable */
 	__HAL_RCC_GPIOC_CLK_ENABLE()

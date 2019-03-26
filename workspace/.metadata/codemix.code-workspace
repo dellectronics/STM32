@@ -1,0 +1,15 @@
+{
+"folders": [
+    {
+        "path": ".plugins\\com.genuitec.eclipse.code.core\\com.genuitec.eclipse.code.core.tmp-project"
+    }
+],
+  "settings": {
+    "javascript.referencesCodeLens.enabled": true,
+    "editor.suggest.filterGraceful": false,
+    "typescript.implementationsCodeLens.enabled": true,
+    "editor.quickSuggestionsDelay": 200,
+    "typescript.referencesCodeLens.enabled": true,
+    "editor.detectIndentation": false
+  }
+}

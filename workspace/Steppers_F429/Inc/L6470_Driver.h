@@ -12,8 +12,6 @@
 #include "stm32f4xx_hal.h"
 #include "stm32f4xx_hal_gpio.h"
 
-
-
 #define CS_PORT	SPI1_CS_GPIO_Port
 #define CS_PIN SPI1_CS_Pin
 #define numberOfDrivers 2
@@ -57,5 +55,16 @@ void L6470_nCS_Low(void);
 uint8_t L6470_SetParam(uint8_t param, uint8_t *pData, uint8_t length, uint8_t driverPos);
 void L6470_GetParam(uint8_t param, uint8_t *pData, uint8_t length, uint8_t driverPos);
 void L6470_Run(uint32_t speed, uint8_t dir, uint8_t driverPos);
+void L6470_Move(uint32_t steps, uint8_t dir, uint8_t driverPos);
+void L6470_GoTo(uint32_t pos, uint8_t driverPos);
+void L6470_GoToDir(uint32_t pos, uint8_t dir, uint8_t driverPos);
+void L6470_GoMark(uint8_t driverPos);
+void L6470_ResetPos(uint8_t driverPos);
+void L6470_ResetDevice(uint8_t driverPos);
+void L6470_SoftStop(uint8_t driverPos);
+void L6470_HardStop(uint8_t driverPos);
+void L6470_SoftHiZ(uint8_t driverPos);
+void L6470_GetStatus(uint8_t *data, uint8_t driverPos);
+
 
 #endif /* L6470_DRIVER_H_ */

@@ -1,3 +1,4 @@
+//org.eclipse.ui.commands/state/com.genuitec.eclipse.code.saveCommunications/org.eclipse.ui.commands.toggleState=false
 //org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
 ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.cdt.ui.presentation\tTorg.eclipse.cdt.ui.CEditor.presentation
 ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.cdt.ui.editors.textfont
@@ -7,3 +8,4 @@ eclipse.preferences.version=1
 org.eclipse.cdt.internal.ui.compare.AsmMergeViewer=1|Consolas|11.25|0|WINDOWS|1|-15|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;
 org.eclipse.cdt.internal.ui.compare.CMergeViewer=1|Consolas|11.25|0|WINDOWS|1|-15|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;
 org.eclipse.cdt.ui.editors.textfont=1|Consolas|11.25|0|WINDOWS|1|-15|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;
+org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands>\r\n<keyBinding commandId\="com.genuitec.eclipse.code.quickOpen" contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+P"/>\r\n<keyBinding commandId\="com.genuitec.eclipse.code.runCommands" contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+SHIFT+P"/>\r\n<keyBinding commandId\="com.genuitec.eclipse.code.openTypes" contextId\="com.genuitec.eclipse.code.codeMixEditorScope" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+SHIFT+T"/>\r\n</org.eclipse.ui.commands>
