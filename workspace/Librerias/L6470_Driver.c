@@ -350,7 +350,7 @@ void L6470_HardHiZ(uint8_t driverPos)
 
 }	// L6470_HardHiZ
 
-void L6470_GetStatus(uint8_t *data, uint8_t driverPos)
+void L6470_GetStatus(uint8_t *pData, uint8_t driverPos)
 {
 	uint8_t rxData[2 * numberOfDrivers];
 	uint8_t offset;
@@ -367,9 +367,11 @@ void L6470_GetStatus(uint8_t *data, uint8_t driverPos)
 	HAL_SPI_Receive(SPI_PORT, &rxData[0], (2 * numberOfDrivers), 100);
 	L6470_nCS_Low();
 
-	for (int i = 0; i < length; ++i)
+	for (int i = 0; i < 2; ++i)
 	{
 		*pData = rxData[(i * 2) + offset];
 		++pData;
 	}
 }	// L6470_GetStatus
+
+

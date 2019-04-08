@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="D:\STM32\workspace\Librerias" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
 	<item value="539" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_x"/>
 	<item value="1" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.last_focus"/>
 	<item value="0" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_y"/>
@@ -16,6 +17,9 @@
 		<item value="444" key="size.width"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item value="0" key="askReindex.detail"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>

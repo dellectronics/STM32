@@ -8,9 +8,9 @@
 #ifndef L6470_DRIVER_H_
 #define L6470_DRIVER_H_
 
-#include "main.h"
-#include "stm32f4xx_hal.h"
-#include "stm32f4xx_hal_gpio.h"
+#include <main.h>
+#include <stm32f4xx_hal.h>
+#include <stm32f4xx_hal_gpio.h>
 
 #define CS_PORT	SPI1_CS_GPIO_Port
 #define CS_PIN SPI1_CS_Pin
